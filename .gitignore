@@ -1,0 +1,4 @@
+# ignore the javascript dist folder
+server/dist
+# ignore node_modules folder
+server/node_modules
