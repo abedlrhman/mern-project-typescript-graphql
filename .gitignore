@@ -2,3 +2,8 @@
 server/dist
 # ignore node_modules folder
 server/node_modules
+
+# ignore the log files
+.DS*
+package-lock.json
+yarn.lock
