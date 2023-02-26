@@ -97,9 +97,7 @@ export class UserResolver {
   async login(
     @Arg("options") options: UsernamePasswordInput,
     @Ctx() { em, req }: MyContext
-  ): Promise<UserResponse>
-  {
-    
+  ): Promise<UserResponse> {
     const user = await em.findOne(User, { username: options.username });
     if (!user) {
       return {
@@ -114,7 +112,10 @@ export class UserResolver {
       };
     }
 
-    req.session
+    req.session.userId = user.id;
+    console.log(req.session.userId)
+    /* req.session.userId = user.id;
+    console.log(req.session.userId) */
 
     return {
       user,
